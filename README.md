@@ -106,3 +106,13 @@ terraform plan
 ```t
 terraform apply --auto-approve
 ```
+Go to the management console, search instance name that we given in terraform(cognito_ec2), connect using "Ec2 instance connect and login as a root user using command
+```t
+sudo su
+```
+we installed aws cli, we need to access to my instance to retrive the data from aws, we need to configure using command
+```t
+aws configure
+```
+it will ask "AWS Access Key ID", "AWS Secret Access Key", "region name" and "Default output format" as shown in below
+
