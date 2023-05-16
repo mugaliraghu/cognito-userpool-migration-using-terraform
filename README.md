@@ -79,15 +79,11 @@ If you do logout, it will redirect to the page, As shown
 
 ![Screenshot (110)](https://user-images.githubusercontent.com/120295902/235737187-15d02c48-8172-4b71-a04d-a43ca9b2644c.png)
 
-in the above user pool i have added only two attribute like Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2" with a Lambda Migration Lambda Function.
+in the above user pool, Its only having default attributeslike Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2".
 
-To create UserPool, u need to enter the UserPool2 folder and do add some changes in Program1.py file that is Userpool id and client id, That you will get from the output of First cognito user pool.
-after navigate to the main file do the terraform commands as you did above.
+Go to the Userpool2 folder and navigate to the main file, do the terraform commands as we did above.
 
-To verify that go to aws management console cognito service and search with the name you given while creating UserPool and in the  app client enter into your client and if you launch the host Ui, you will redirect to url, in that enter SignUp to see the new attributes as shown in image.
+To verify that go to aws management console cognito service and search with the name you given while creating UserPoolI(in my case i have given mypool1) and in the  app client enter into your client and if you launch the host Ui, you will redirect to url, in that enter SignUp to see the new attributes as shown in image.
 
 ![Screenshot (127)](https://user-images.githubusercontent.com/120295902/236803734-bc561cf4-36f7-41a5-a9ff-916ec8ab47bd.png)
 
-To check the Migration data, login with the credential that you used when logging in the old userpool, if you looged in successefully then the migration is working successefully, And you can check the log in Migration Trigger Lambda. as shown in below image.
-
-![Screenshot (126)](https://user-images.githubusercontent.com/120295902/236802816-8c63bc11-de15-4146-b97c-8eeaeca0cfc1.png)
