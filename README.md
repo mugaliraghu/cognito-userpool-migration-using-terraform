@@ -115,4 +115,12 @@ we installed aws cli, we need to access to my instance to retrive the data from 
 aws configure
 ```
 it will ask "AWS Access Key ID", "AWS Secret Access Key", "region name" and "Default output format" as shown in below
+after that check the npm and nodejs installed properly by using commands
+```t
+node -v
+```
+```t
+npm -v
+```
+
 
