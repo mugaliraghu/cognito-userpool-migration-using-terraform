@@ -1,7 +1,8 @@
 # cognito-userpool-users-migration-using-terraform
 
 ## Objective
-I created an Amazon Cognito user pool and now I want to change the standard attributes required for user registration, But I am unable change standard user pool attributes after a user pool is created. Instead, created a new user pool with the attributes that you want to require for user registration. Then, migrate existing users to the new user pool by using an AWS Lambda function as a user migration trigger.
+I created an Amazon Cognito user pool and now I want to change the standard attributes required for user registration, But I am unable change standard user pool attributes after a user pool is created. Instead, created a new user pool with the attributes that i want to require for user registration. Then i  migrated  existing users to the new userpool using cognito-backup-restore.
+cognito-backup-restore tries to  providing a way to backup users from cognito pool(s) to json file and vice-versa.
 
 ## Steps
 
