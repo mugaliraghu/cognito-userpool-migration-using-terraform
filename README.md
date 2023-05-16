@@ -18,7 +18,7 @@ you will get the output as shown in below image.
 
 ![Screenshot (95)](https://user-images.githubusercontent.com/120295902/235646615-444e1946-0323-4395-9fac-0d55266d13d6.png)
 
-after that go to the UserPool1 folder and navigate to the main file and run the command
+after that go to the Userpool1 folder and navigate to the main file and run the command
 ```t
 terraform init
 ```
@@ -79,7 +79,7 @@ If you do logout, it will redirect to the page, As shown
 
 ![Screenshot (110)](https://user-images.githubusercontent.com/120295902/235737187-15d02c48-8172-4b71-a04d-a43ca9b2644c.png)
 
-in the above user pool, Its only having default attributeslike Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2".
+in the above user pool, Its only having default attributes like Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2".
 
 Go to the Userpool2 folder and navigate to the main file, do the terraform commands as we did above.
 
@@ -87,3 +87,6 @@ To verify that go to aws management console cognito service and search with the 
 
 ![Screenshot (127)](https://user-images.githubusercontent.com/120295902/236803734-bc561cf4-36f7-41a5-a9ff-916ec8ab47bd.png)
 
+ Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it.
+ 
+ 
