@@ -89,4 +89,20 @@ To verify that go to aws management console cognito service and search with the 
 
  Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it.
  
+ Now, its time to migrate users from old userpool to new userpool.it needs one Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore we need npm package, for   npm we need nodejs.
  
+ Go to the folder Ec2 instance, in that i have created a terraform file which will create ec2 instance, in that just change the "ami" and "key_name". It will create Ec2 instance with       the  name of "cognito_ec2". And i have created remote-exec provisioner in that i have added required packages installation like aws cli, nodejs and cognito-backup-restore.
+ 
+Now, Execute terraform commands
+```t
+terraform init
+```
+```t
+terraform validate
+```
+```t
+terraform plan
+```
+```t
+terraform apply --auto-approve
+```
