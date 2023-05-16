@@ -79,19 +79,6 @@ If you do logout, it will redirect to the page, As shown
 
 ![Screenshot (110)](https://user-images.githubusercontent.com/120295902/235737187-15d02c48-8172-4b71-a04d-a43ca9b2644c.png)
 
-And also in the aws management console cognito, check user pool properties you can see the post confirmation Lambda triggers as shown.
-
-![Screenshot (105)](https://user-images.githubusercontent.com/120295902/235738720-fd3d0e9b-6ee4-496e-b20e-331227c6aca9.png)
-
-The lambda function as shown in below image.
-
-![Screenshot (111)](https://user-images.githubusercontent.com/120295902/235738321-1b4a7925-22b8-4ee4-a2ca-caf0c450f7fc.png)
-
-and in the CloudWatch logs you can check the App client id, user pool, user authentication status and user attributes etc.
-
-![Screenshot (103)](https://user-images.githubusercontent.com/120295902/235731255-f7eea894-d373-4ef8-b87e-a023f79de472.png)
-
-
 in the above user pool i have added only two attribute like Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2" with a Lambda Migration Lambda Function.
 
 To create UserPool, u need to enter the UserPool2 folder and do add some changes in Program1.py file that is Userpool id and client id, That you will get from the output of First cognito user pool.
