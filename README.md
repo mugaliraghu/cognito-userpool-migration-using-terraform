@@ -83,15 +83,15 @@ in the above user pool, Its only having default attributes like Email and Passwo
 
 Go to the Userpool2 folder and navigate to the main file, do the terraform commands as we did above.
 
-To verify that go to aws management console cognito service and search with the name you given while creating UserPoolI(in my case i have given mypool1) and in the  app client enter into your client and if you launch the host Ui, you will redirect to url, in that enter SignUp to see the new attributes as shown in image.
+To verify that go to aws management console cognito service and search with the name you given while creating UserPoolI(in my case i have given name as mypool1) and in the  app client enter into your client and if you launch the host Ui, you will redirect to url, in that enter SignUp to see the new attributes as shown in image.
 
 ![Screenshot (127)](https://user-images.githubusercontent.com/120295902/236803734-bc561cf4-36f7-41a5-a9ff-916ec8ab47bd.png)
 
  Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it.
  
- Now, its time to migrate users from old userpool to new userpool.it needs one Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore we need npm package, for   npm we need nodejs.
+ Now, its time to migrate users from old userpool to new userpool.it needs Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore we need npm package, for   npm we need nodejs.
  
- Go to the folder Ec2 instance, in that i have created a terraform file which will create ec2 instance, in that just change the "ami" and "key_name". It will create Ec2 instance with       the  name of "cognito_ec2". And i have created remote-exec provisioner in that i have added required packages installation like aws cli, nodejs and cognito-backup-restore.
+ Go to the folder Ec2 instance folder, in that i have created a terraform file which will create ec2 instance, in that just change the "ami" and "key_name". It will create Ec2 instance with  the  name of "cognito_ec2". And i have created remote-exec provisioner in that i have added required packages installation like aws cli, nodejs and cognito-backup-restore. Make sure the path of the key_name and host has be changes on your configuration.
  
 Now, Execute terraform commands
 ```t
@@ -110,17 +110,24 @@ Go to the management console, search instance name that we given in terraform(co
 ```t
 sudo su
 ```
-we installed aws cli, we need to access to my instance to retrive the data from aws, we need to configure using command
+we installed aws cli, nodejs, and npm. To cross verify check with below commands.
 ```t
-aws configure
-```
-it will ask "AWS Access Key ID", "AWS Secret Access Key", "region name" and "Default output format" as shown in below
-after that check the npm and nodejs installed properly by using commands
+aws --version
+
 ```t
 node -v
 ```
 ```t
 npm -v
 ```
+The below command is use to get "AWS Access Key ID", "AWS Secret Access Key", "region name" and "Default output format" as shown in below. it will give access to my EC2 instance to retrive the data.
+```t
+aws configure
+```
+![Screenshot (145)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/7bdab198-e4ca-4458-8146-cc4964ebce3a)
 
+after checking all of these to enter the command. "cbr restore" is used to retrive and restore users that we are trying to migrate. it will retrive and save the file in json format.
+```
+cbr restore
+```
 
