@@ -171,3 +171,18 @@ It will indicate the users migration has done successfully.
 Now, to check the migrated user, go to the aws management console cognito section check with new userpool, in users section you can see the user details as shown.
 
 ![Screenshot (157)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/1383b452-7a30-40e8-944d-1012c0f631a5)
+
+after successful migration automatically user get a default username and password for registered mail as shown in image.
+
+![Screenshot (158)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/edc026fd-ccfa-426e-af20-b5252f25924c)
+
+Here, you can see in confirm status it showing "force change password" to do that go to the App integration section, open your client and launch "Host UI" after launching tak the url and paste it in a cognito app files as we did above.
+
+after if we do login with username and password that we got in mail, it will redirect to create a New password and enter a new attributes that we added in new pool like "Name" and "Phone number" as shown in image
+![Screenshot (159)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3485fe7a-8b8d-4299-8a27-b63704d9b0fd)
+
+after entering all the details it's going to logged_in successfully as shown in image.
+
+![Screenshot (160)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/a79e36df-9530-4626-a1a6-60a48c7e0388)
+
+
