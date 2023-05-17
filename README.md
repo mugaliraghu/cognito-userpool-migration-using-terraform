@@ -87,7 +87,7 @@ To verify that go to aws management console cognito service and search with the 
 
 ![Screenshot (127)](https://user-images.githubusercontent.com/120295902/236803734-bc561cf4-36f7-41a5-a9ff-916ec8ab47bd.png)
 
- Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it.
+<!--  Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it. -->
  
  Now, its time to migrate users from old userpool to new userpool.it needs Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore you need npm package, for   npm you need nodejs.
  
