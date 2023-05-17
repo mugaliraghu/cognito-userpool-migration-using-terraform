@@ -154,3 +154,11 @@ cat <json file>
 it will show the user details that took backup from my user pool as shown 
 
 ![Screenshot (153)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3a78388f-5ca9-470b-bd44-d020650bbbf3)
+
+Next we need to restore the data in new user pool, To do that use the command "cbr" and enter restore
+```t
+cbr
+```
+after selecting restore, same like it will ask profile and region, In which region userpool we want to store as shown.
+
+![Screenshot (154)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/14e2d80b-98f7-4054-94a3-185efa61c452)
