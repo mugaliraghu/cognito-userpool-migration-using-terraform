@@ -130,4 +130,5 @@ after checking all of these to enter the command. "cbr restore" is used to retri
 ```
 cbr restore
 ```
+![Screenshot (146)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/dccb92a9-75bf-4038-915b-cb89affda494)
 
