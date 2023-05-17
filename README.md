@@ -113,7 +113,7 @@ sudo su
 we installed aws cli, nodejs, and npm. To cross verify check with below commands.
 ```t
 aws --version
-
+```
 ```t
 node -v
 ```
