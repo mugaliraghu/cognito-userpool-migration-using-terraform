@@ -178,7 +178,7 @@ after successful migration automatically user get a default username and passwor
 <!-- 
 Here, you can see in confirm status it showing "force change password" to do that go to the App integration section, open your client and launch "Host UI" after launching tak the url and paste it in a cognito app files as you did above. -->
 
-after if you do login with username and password that you got in mail, it will redirect to create a New password and enter a new attributes that you added in new pool like "Name" and "Phone number" as shown in image
+after if you do "Signin" with username and password that you got in mail, it will redirect to create a New password and enter a new attributes that you added in new pool like "Name" and "Phone number" as shown in image
 ![Screenshot (159)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3485fe7a-8b8d-4299-8a27-b63704d9b0fd)
 
 after entering all the details it's going to logged_in successfully as shown in image.
