@@ -162,3 +162,7 @@ cbr
 after selecting restore, same like it will ask profile and region, In which region userpool we want to store as shown.
 
 ![Screenshot (154)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/14e2d80b-98f7-4054-94a3-185efa61c452)
+
+after that we have to select User pool that we want to migrate(mypool1) and we want to select the path were json file is present, After selection it will show "Users Inported Successfully" as shown.
+It will indicate the users migration has done successfully.
+![Screenshot (156)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58058713-dd9c-417c-930b-c0ac21a24455)
