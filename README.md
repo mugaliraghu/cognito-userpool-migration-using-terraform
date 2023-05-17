@@ -167,3 +167,7 @@ after that we have to select User pool that we want to migrate(mypool1) and we w
 It will indicate the users migration has done successfully.
 
 ![Screenshot (156)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58058713-dd9c-417c-930b-c0ac21a24455)
+
+Now, to check the migrated user, go to the aws management console cognito section check with new userpool, in users section you can see the user details as shown.
+
+![Screenshot (157)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/1383b452-7a30-40e8-944d-1012c0f631a5)
