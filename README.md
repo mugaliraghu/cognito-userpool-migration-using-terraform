@@ -22,7 +22,7 @@ after that go to the Userpool1 folder and navigate to the main file and run the 
 ```t
 terraform init
 ```
-then, use need to use the below command to validate the file
+then, i need to use the below command to validate the file
 ```t
 terraform validate
 ```
@@ -38,15 +38,15 @@ to verify the resources, open the management console and go to the "cognito" sea
 
 ![Screenshot (112)](https://user-images.githubusercontent.com/120295902/235833543-701fa476-af86-4e2f-88b1-c0553e4a602d.png)
  
- open the App integration menu in that you will get client details as shown, if you open app client you can see host ui page.
+ open the App integration menu in that i will get client details as shown, if i open app client you can see host ui page.
  
 ![Screenshot (106)](https://user-images.githubusercontent.com/120295902/235735658-8d887291-8903-4c34-a01c-e623d0a8aaa0.png)
 
-The host ui page as shown below, here we can see callback url's and logout url's.
+The host ui page as shown below, here you can see callback url's and logout url's.
 
 ![Screenshot (104)](https://user-images.githubusercontent.com/120295902/235735667-8992eee2-d7dd-44ab-9702-85e56272d267.png)
 
-enter "Hosted Ui".to get the application login page
+launch "Hosted Ui".to get the application login page
 
 ![Screenshot (107)](https://user-images.githubusercontent.com/120295902/235735686-00932550-ff20-49eb-b475-e155bbed984b.png)
 
@@ -81,7 +81,7 @@ If you do logout, it will redirect to the page, As shown
 
 in the above user pool, Its only having default attributes like Email and Password, but now i need to add two more attrubute like Name and phone No but after cretaing Userpool there is no permission to change the attribute, That's why i created a new userpool, that is "UserPool2".
 
-Go to the Userpool2 folder and navigate to the main file, do the terraform commands as we did above.
+Go to the Userpool2 folder and navigate to the main file, do the terraform commands as you did above.
 
 To verify that go to aws management console cognito service and search with the name you given while creating UserPoolI(in my case i have given name as mypool1) and in the  app client enter into your client and if you launch the host Ui, you will redirect to url, in that enter SignUp to see the new attributes as shown in image.
 
@@ -89,7 +89,7 @@ To verify that go to aws management console cognito service and search with the 
 
  Do same like above, after launching "Hosted UI" it will redirected to the website, copy that url and paste it inside the Cognito app files, replace old url  with new url for index.html, logged_in.html and make some changes in logged_out.html like before and save it.
  
- Now, its time to migrate users from old userpool to new userpool.it needs Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore we need npm package, for   npm we need nodejs.
+ Now, its time to migrate users from old userpool to new userpool.it needs Ec2 instance with cognito-backup-restore Package, To install cognito-backup-restore you need npm package, for   npm you need nodejs.
  
  Go to the folder Ec2 instance folder, in that i have created a terraform file which will create ec2 instance, in that just change the "ami" and "key_name". It will create Ec2 instance with  the  name of "cognito_ec2". And i have created remote-exec provisioner in that i have added required packages installation like aws cli, nodejs and cognito-backup-restore. Make sure the path of the key_name and host has be changes on your configuration.
  
@@ -106,7 +106,7 @@ terraform plan
 ```t
 terraform apply --auto-approve
 ```
-Go to the management console, search instance name that we given in terraform(cognito_ec2), connect using "Ec2 instance connect and login as a root user using command
+Go to the management console, search instance name that you given in terraform(cognito_ec2), connect using "Ec2 instance connect and login as a root user using command
 ```t
 sudo su
 ```
@@ -135,7 +135,7 @@ it is used restore the users to new user pool.
 ```t
 cbr
 ```
-if u select Backup, it will ask AWS profile and Region we want retrive the data. After selection it will the cognito userpools in that region. we have to select the userpool that we are trying to migrate users as shown.
+if u select Backup, it will ask AWS profile and Region you want retrive the data. After selection it will the cognito userpools in that region. you have to select the userpool that you are trying to migrate users as shown.
 
 ![Screenshot (148)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58ddf9d1-1157-4c23-88b5-c252844e9564)
 
@@ -155,15 +155,15 @@ it will show the user details that took backup from my user pool as shown
 
 ![Screenshot (153)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3a78388f-5ca9-470b-bd44-d020650bbbf3)
 
-Next we need to restore the data in new user pool, To do that use the command "cbr" and enter restore
+Next you need to restore the data in new user pool, To do that use the command "cbr" and enter restore
 ```t
 cbr
 ```
-after selecting restore, same like it will ask profile and region, In which region userpool we want to store as shown.
+after selecting restore, same like it will ask profile and region, In which region userpool you want to store as shown.
 
 ![Screenshot (154)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/14e2d80b-98f7-4054-94a3-185efa61c452)
 
-after that we have to select User pool that we want to migrate(mypool1) and we want to select the path were json file is present, After selection it will show "Users Inported Successfully" as shown.
+after that you have to select User pool that you want to migrate(mypool1) and you want to select the path were json file is present, After selection it will show "Users Inported Successfully" as shown.
 It will indicate the users migration has done successfully.
 
 ![Screenshot (156)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58058713-dd9c-417c-930b-c0ac21a24455)
@@ -176,9 +176,9 @@ after successful migration automatically user get a default username and passwor
 
 ![Screenshot (158)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/edc026fd-ccfa-426e-af20-b5252f25924c)
 
-Here, you can see in confirm status it showing "force change password" to do that go to the App integration section, open your client and launch "Host UI" after launching tak the url and paste it in a cognito app files as we did above.
+Here, you can see in confirm status it showing "force change password" to do that go to the App integration section, open your client and launch "Host UI" after launching tak the url and paste it in a cognito app files as you did above.
 
-after if we do login with username and password that we got in mail, it will redirect to create a New password and enter a new attributes that we added in new pool like "Name" and "Phone number" as shown in image
+after if you do login with username and password that you got in mail, it will redirect to create a New password and enter a new attributes that you added in new pool like "Name" and "Phone number" as shown in image
 ![Screenshot (159)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3485fe7a-8b8d-4299-8a27-b63704d9b0fd)
 
 after entering all the details it's going to logged_in successfully as shown in image.
