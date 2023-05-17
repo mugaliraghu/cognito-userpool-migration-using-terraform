@@ -126,9 +126,18 @@ aws configure
 ```
 ![Screenshot (145)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/7bdab198-e4ca-4458-8146-cc4964ebce3a)
 
-after checking all of these to enter the command. "cbr restore" is used to retrive and restore users that we are trying to migrate. it will retrive and save the file in json format.
+after checking all of these to enter the command. "cbr" it will show two values that is "Backup" and "Restore. As shown in image. 
+### Backup: 
+it is used to retrive the user date form the clients and it stores as a json file in my instance.
+### Restore:
+it is used restore the users to new user pool.
+
+```t
+cbr
 ```
-cbr restore
-```
-![Screenshot (146)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/dccb92a9-75bf-4038-915b-cb89affda494)
+if u select Backup, it will ask AWS profile and Region we want retrive the data. After selection it will the cognito userpools in that region. we have to select the userpool that we are trying to migrate users as shown.
+
+![Screenshot (148)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58ddf9d1-1157-4c23-88b5-c252844e9564)
+
+
 
