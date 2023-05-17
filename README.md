@@ -139,5 +139,18 @@ if u select Backup, it will ask AWS profile and Region we want retrive the data.
 
 ![Screenshot (148)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/58ddf9d1-1157-4c23-88b5-c252844e9564)
 
+Here i will select my userpool(mypool) and  it will ask the directory which is where to store the json file, I will choose the default one and it will store in "/home/ubuntu/", it will show the  Json Exported Successfully as shown in image.
 
+![Screenshot (152)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3f214aeb-d87a-48ad-b46f-c127332248fa)
 
+To cross verify just run ls command
+```t
+ls
+```
+it will show the json file, the run the below command 
+```t
+cat <json file>
+```
+it will show the user details that took backup from my user pool as shown 
+
+![Screenshot (153)](https://github.com/mugaliraghu/cognito-users-migration-using-terraform/assets/120295902/3a78388f-5ca9-470b-bd44-d020650bbbf3)
